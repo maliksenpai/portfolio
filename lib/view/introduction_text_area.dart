@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:parallax_image/parallax_image.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -41,8 +42,9 @@ class IntroductionTextArea extends StatelessWidget {
               repeatForever: true,
             ),
           ),
-          Text(
-            personDescription
+          SelectableText(
+            personDescription,
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: 36,),
           Row(

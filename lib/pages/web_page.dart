@@ -1,14 +1,18 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/view/experience_area.dart';
 import 'package:portfolio/view/introduction_image_area.dart';
 import 'package:portfolio/view/introduction_text_area.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class WebPage extends StatelessWidget {
   const WebPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ItemScrollController scrollController = new ItemScrollController();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -28,8 +32,16 @@ class WebPage extends StatelessWidget {
         ),
         actions: [
           TextButton(
+            child: const Text('About me'),
+            onPressed: () {
+              scrollController.scrollTo(index: 0, duration: Duration(seconds: 1), curve: Curves.bounceInOut);
+            },
+          ),
+          TextButton(
             child: const Text('Experiences'),
-            onPressed: () {},
+            onPressed: () {
+              scrollController.scrollTo(index: 1, duration: Duration(seconds: 1), curve: Curves.bounceInOut);
+            },
           ),
           TextButton(
             child: const Text('Languages'),
@@ -45,15 +57,23 @@ class WebPage extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          Row(
-            children: [
-              IntroductionTextArea(isSmallScreen: false,),
-              IntroductionImageArea(isSmallScreen: false),
-            ],
-          )
-        ],
+      body: ScrollablePositionedList.builder(
+        itemCount: 2,
+        itemScrollController: scrollController,
+        itemBuilder: (context, index) {
+          if(index==0){
+            return Row(
+              children: [
+                IntroductionTextArea(isSmallScreen: false,),
+                IntroductionImageArea(isSmallScreen: false),
+              ],
+            );
+          }else if(index==1){
+            return ExperienceArea();
+          } else {
+            return Container();
+          }
+        },
       ),
     );
   }
