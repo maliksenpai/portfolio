@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parallax_image/parallax_image.dart';
 import 'package:portfolio/data/data.dart';
@@ -52,7 +53,7 @@ class IntroductionTextArea extends StatelessWidget {
             children: [
               if(githubLink.isNotEmpty)
                 IconButton(
-                  icon: Image.asset('images/github.png'),
+                  icon: kIsWeb ? Image.network('assets/images/github.png') : Image.asset('images/github.png'),
                   iconSize: 36,
                   onPressed: (){
                     launch(githubLink);
@@ -60,7 +61,7 @@ class IntroductionTextArea extends StatelessWidget {
                 ),
               if(linkedInLink.isNotEmpty)
                 IconButton(
-                  icon: Image.asset('images/linkedin.png'),
+                  icon: kIsWeb ? Image.network('assets/images/linkedin.png') : Image.asset('images/linkedin.png'),
                   iconSize: 36,
                   onPressed: (){
                     launch(linkedInLink);

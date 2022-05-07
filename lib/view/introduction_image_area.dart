@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parallax_image/parallax_image.dart';
 
@@ -7,6 +8,7 @@ class IntroductionImageArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ImageProvider image = kIsWeb ? NetworkImage('assets/images/parallax-1.jpeg') as ImageProvider : AssetImage('images/parallax-1.jpeg');
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -16,7 +18,7 @@ class IntroductionImageArea extends StatelessWidget {
             height: MediaQuery.of(context).size.height - AppBar().preferredSize.height,
             alignment: Alignment.center,
             child: ParallaxImage(
-              image: AssetImage('images/parallax-1.jpeg'),
+              image: image,
               extent: 10000.0,
               child: Container(
                 width: isSmallScreen ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.5,
