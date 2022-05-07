@@ -53,7 +53,7 @@ class IntroductionTextArea extends StatelessWidget {
             children: [
               if(githubLink.isNotEmpty)
                 IconButton(
-                  icon: kIsWeb ? Image.network('assets/images/github.png') : Image.asset('images/github.png'),
+                  icon: kIsWeb ? Image.asset('assets/images/github.png') : Image.asset('images/github.png'),
                   iconSize: 36,
                   onPressed: (){
                     launch(githubLink);
@@ -61,7 +61,7 @@ class IntroductionTextArea extends StatelessWidget {
                 ),
               if(linkedInLink.isNotEmpty)
                 IconButton(
-                  icon: kIsWeb ? Image.network('assets/images/linkedin.png') : Image.asset('images/linkedin.png'),
+                  icon: kIsWeb ? Image.asset('assets/images/linkedin.png') : Image.asset('images/linkedin.png'),
                   iconSize: 36,
                   onPressed: (){
                     launch(linkedInLink);

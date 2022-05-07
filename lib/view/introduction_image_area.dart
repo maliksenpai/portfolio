@@ -8,7 +8,7 @@ class IntroductionImageArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ImageProvider image = kIsWeb ? NetworkImage('assets/images/parallax-1.jpeg') as ImageProvider : AssetImage('images/parallax-1.jpeg');
+    ImageProvider image = kIsWeb ? AssetImage('assets/images/parallax-1.jpeg') as ImageProvider : AssetImage('images/parallax-1.jpeg');
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
