@@ -1,17 +1,16 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/data/data.dart';
 import 'package:portfolio/view/experience_area.dart';
 import 'package:portfolio/view/introduction_image_area.dart';
 import 'package:portfolio/view/introduction_text_area.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 class WebPage extends StatelessWidget {
   const WebPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ItemScrollController scrollController = new ItemScrollController();
+    ScrollController  scrollController = ScrollController();
 
     return Scaffold(
       appBar: AppBar(
@@ -34,13 +33,14 @@ class WebPage extends StatelessWidget {
           TextButton(
             child: const Text('About me'),
             onPressed: () {
-              scrollController.scrollTo(index: 0, duration: Duration(seconds: 1), curve: Curves.bounceInOut);
+              //scrollController.scrollToIndex(index: 0,);
             },
           ),
           TextButton(
             child: const Text('Experiences'),
             onPressed: () {
-              scrollController.scrollTo(index: 1, duration: Duration(seconds: 1), curve: Curves.bounceInOut);
+              print("..");
+              //scrollController.scrollToIndex(index: 1);
             },
           ),
           TextButton(
@@ -57,23 +57,26 @@ class WebPage extends StatelessWidget {
           ),
         ],
       ),
-      body: ScrollablePositionedList.builder(
-        itemCount: 2,
-        itemScrollController: scrollController,
-        itemBuilder: (context, index) {
-          if(index==0){
-            return Row(
-              children: [
-                IntroductionTextArea(isSmallScreen: false,),
-                IntroductionImageArea(isSmallScreen: false),
-              ],
-            );
-          }else if(index==1){
-            return ExperienceArea();
-          } else {
-            return Container();
-          }
-        },
+      body: SmoothScrollWeb(
+        controller: scrollController,
+        child: ListView.builder(
+          controller: scrollController,
+          itemCount: 2,
+          itemBuilder: (context, index) {
+            if(index==0){
+              return Row(
+                children: [
+                  IntroductionTextArea(isSmallScreen: false,),
+                  IntroductionImageArea(isSmallScreen: false),
+                ],
+              );
+            }else if(index==1){
+              return ExperienceArea();
+            } else {
+              return Container();
+            }
+          },
+        ),
       ),
     );
   }

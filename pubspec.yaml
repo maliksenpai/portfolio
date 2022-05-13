@@ -38,7 +38,7 @@ dependencies:
   url_launcher: ^6.0.20
   url_launcher_web:
   parallax_image: ^0.3.1+1
-  scrollable_positioned_list: ^0.2.3
+  smooth_scroll_web: ^0.0.4
   timeline_tile: ^2.0.0
   intl: ^0.17.0
   simple_gradient_text: ^1.2.3
