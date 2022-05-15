@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:sizer/sizer.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class ExperienceArea extends StatelessWidget {
@@ -14,7 +15,7 @@ class ExperienceArea extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       constraints: BoxConstraints(
-        minHeight: MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+        minHeight: 100.h - AppBar().preferredSize.height,
       ),
       child: Column(
         children: [
@@ -26,8 +27,8 @@ class ExperienceArea extends StatelessWidget {
               Colors.redAccent,
             ],
             gradientType: GradientType.radial,
-            style: const TextStyle(
-              fontSize: 36
+            style: TextStyle(
+              fontSize: 8.sp,
             ),
           ),
           Padding(
@@ -107,79 +108,3 @@ class ExperienceArea extends StatelessWidget {
     );
   }
 }
-
-
-/*
-import 'package:flutter/material.dart';
-import 'package:timeline_tile/timeline_tile.dart';
-
-class ExperienceArea extends StatelessWidget {
-  const ExperienceArea({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          TimelineTile(
-            alignment: TimelineAlign.manual,
-            lineXY: 0.1,
-            isFirst: true,
-            indicatorStyle: const IndicatorStyle(
-              width: 20,
-              color: Colors.purple,
-            ),
-            beforeLineStyle: const LineStyle(
-              color: Colors.purple,
-              thickness: 6,
-            ),
-          ),
-          const TimelineDivider(
-            begin: 0.1,
-            end: 0.9,
-            thickness: 6,
-            color: Colors.purple,
-          ),
-          TimelineTile(
-            alignment: TimelineAlign.manual,
-            lineXY: 0.9,
-            beforeLineStyle: const LineStyle(
-              color: Colors.purple,
-              thickness: 6,
-            ),
-            afterLineStyle: const LineStyle(
-              color: Colors.deepOrange,
-              thickness: 6,
-            ),
-            indicatorStyle: const IndicatorStyle(
-              width: 20,
-              color: Colors.cyan,
-            ),
-          ),
-          const TimelineDivider(
-            begin: 0.1,
-            end: 0.9,
-            thickness: 6,
-            color: Colors.deepOrange,
-          ),
-          TimelineTile(
-            alignment: TimelineAlign.manual,
-            lineXY: 0.1,
-            isLast: true,
-            beforeLineStyle: const LineStyle(
-              color: Colors.deepOrange,
-              thickness: 6,
-            ),
-            indicatorStyle: const IndicatorStyle(
-              width: 20,
-              color: Colors.red,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
- */

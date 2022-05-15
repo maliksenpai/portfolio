@@ -3,7 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parallax_image/parallax_image.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class IntroductionTextArea extends StatelessWidget {
   bool isSmallScreen;
@@ -12,15 +14,15 @@ class IntroductionTextArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: isSmallScreen ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.5,
-      height: MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+      width: isSmallScreen ? 100.w : 50.w,
+      height: 100.h - AppBar().preferredSize.height,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: (MediaQuery.of(context).size.height - AppBar().preferredSize.height) * 0.3,
+            height: (100.h - AppBar().preferredSize.height) * 0.3,
             child: AnimatedTextKit(
               animatedTexts: [
                 RotateAnimatedText(
@@ -56,7 +58,7 @@ class IntroductionTextArea extends StatelessWidget {
                   icon: kIsWeb ? Image.asset('assets/images/github.png') : Image.asset('images/github.png'),
                   iconSize: 36,
                   onPressed: (){
-                    launch(githubLink);
+                    launchUrlString(githubLink);
                   },
                 ),
               if(linkedInLink.isNotEmpty)
@@ -64,7 +66,7 @@ class IntroductionTextArea extends StatelessWidget {
                   icon: kIsWeb ? Image.asset('assets/images/linkedin.png') : Image.asset('images/linkedin.png'),
                   iconSize: 36,
                   onPressed: (){
-                    launch(linkedInLink);
+                    launchUrlString(linkedInLink);
                   },
                 )
             ],

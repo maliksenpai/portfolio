@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parallax_image/parallax_image.dart';
+import 'package:sizer/sizer.dart';
 
 class IntroductionImageArea extends StatelessWidget {
   bool isSmallScreen;
@@ -15,8 +16,8 @@ class IntroductionImageArea extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: isSmallScreen ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.4,
-            height: MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+            width: isSmallScreen ? 100.w : 40.w,
+            height: 100.h - AppBar().preferredSize.height,
             alignment: Alignment.center,
             child: Stack(
               children: [
@@ -29,8 +30,8 @@ class IntroductionImageArea extends StatelessWidget {
                     image: image2,
                     extent: 10000.0,
                     child: Container(
-                      width: isSmallScreen ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.3,
-                      height: MediaQuery.of(context).size.height - AppBar().preferredSize.height * 0.4,
+                      width: isSmallScreen ? 100.w : 30.w,
+                      height: 100.h - AppBar().preferredSize.height * 0.4,
                     ),
                   ),
                 ),
@@ -43,8 +44,8 @@ class IntroductionImageArea extends StatelessWidget {
                     image: image1,
                     extent: 10000.0,
                     child: Container(
-                      width: isSmallScreen ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width * 0.3,
-                      height: MediaQuery.of(context).size.height - AppBar().preferredSize.height * 0.7,
+                      width: isSmallScreen ? 100.w : 30.w,
+                      height: 100.h - AppBar().preferredSize.height * 0.7,
                     ),
                   ),
                 )
