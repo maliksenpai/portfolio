@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio/data/data.dart';
+import 'package:portfolio/model/experience.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sizer/sizer.dart';
 import 'package:timeline_tile/timeline_tile.dart';
@@ -29,6 +30,12 @@ class ExperienceArea extends StatelessWidget {
             gradientType: GradientType.radial,
             style: TextStyle(
               fontSize: 8.sp,
+            ),
+          ),
+          Text(
+            "Total experience duration: ${getExperinceDuration(experiences)}",
+            style: TextStyle(
+              fontSize: 3.sp,
             ),
           ),
           Padding(
@@ -108,3 +115,18 @@ class ExperienceArea extends StatelessWidget {
     );
   }
 }
+
+String getExperinceDuration(List<Experience> experience) {
+  Duration totalDuration = Duration(seconds: 0);
+  experience.forEach((element) { 
+    totalDuration = element.endTime.difference(element.startTime);
+  });
+  String durationString = "";
+  durationString += totalDuration.inDays > 365 ? "Year: ${(totalDuration.inDays / 365).floorToDouble()} " : "";
+  durationString += totalDuration.inDays > 30 ? "Month: ${((totalDuration.inDays % 365)/30).floorToDouble()} " : "";
+  durationString += totalDuration.inDays > 1 ? "Day: ${((totalDuration.inDays % 365) % 30)}" : "";
+  if(durationString == ""){
+    durationString = "Inexperienced";
+  }
+  return durationString;
+}  

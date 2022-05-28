@@ -37,6 +37,12 @@ class _IntroductionProjectCarouselState extends State<IntroductionProjectCarouse
                 fontSize: 8.sp
             ),
           ),
+          Text(
+            "Number of Project: ${projects.length}",
+            style: TextStyle(
+                fontSize: 3.sp
+            ),
+          ),
           SizedBox(
             width: 100.w,
             height: (100.h - AppBar().preferredSize.height) * 0.7,

@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:parallax_image/parallax_image.dart';
 import 'package:portfolio/data/data.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -9,10 +8,16 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 class IntroductionTextArea extends StatelessWidget {
   bool isSmallScreen;
-  IntroductionTextArea({Key? key, required this.isSmallScreen}) : super(key: key);
+
+  IntroductionTextArea({Key? key, required this.isSmallScreen})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: emailAddress,
+    );
     return Container(
       width: isSmallScreen ? 100.w : 50.w,
       height: 100.h - AppBar().preferredSize.height,
@@ -49,26 +54,44 @@ class IntroductionTextArea extends StatelessWidget {
             personDescription,
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 36,),
+          SizedBox(
+            height: 36,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if(githubLink.isNotEmpty)
+              if (githubLink.isNotEmpty)
                 IconButton(
-                  icon: kIsWeb ? Image.asset('assets/images/github.png') : Image.asset('images/github.png'),
+                  icon: kIsWeb
+                      ? Image.asset('assets/images/github.png')
+                      : Image.asset('images/github.png'),
                   iconSize: 36,
-                  onPressed: (){
+                  onPressed: () {
                     launchUrlString(githubLink);
                   },
                 ),
-              if(linkedInLink.isNotEmpty)
+              if (linkedInLink.isNotEmpty)
                 IconButton(
-                  icon: kIsWeb ? Image.asset('assets/images/linkedin.png') : Image.asset('images/linkedin.png'),
+                  icon: kIsWeb
+                      ? Image.asset('assets/images/linkedin.png')
+                      : Image.asset('images/linkedin.png'),
                   iconSize: 36,
-                  onPressed: (){
+                  onPressed: () {
                     launchUrlString(linkedInLink);
                   },
-                )
+                ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("You can contact me with this email address:"),
+              TextButton(
+                child: Text(emailAddress),
+                onPressed: () {
+                  launchUrl(emailLaunchUri);
+                },
+              )
             ],
           )
         ],
