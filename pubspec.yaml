@@ -45,6 +45,9 @@ dependencies:
   carousel_slider: ^4.1.1
   sizer: ^2.0.15
   fancy_cursor: ^0.1.2
+  google_fonts: ^3.0.1
+  mouse_parallax: ^1.1.0
+  sidebarx: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -64,10 +67,7 @@ dev_dependencies:
 flutter:
 
   assets:
-    - assets/images/github.png
-    - assets/images/linkedin.png
-    - assets/images/parallax-1.jpeg
-    - assets/images/parallax-2.jpeg
+    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

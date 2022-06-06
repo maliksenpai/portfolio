@@ -5,7 +5,8 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:sizer/sizer.dart';
 
 class LanguageBars extends StatefulWidget {
-  const LanguageBars({Key? key}) : super(key: key);
+  bool isMobile;
+  LanguageBars({Key? key, required this.isMobile}) : super(key: key);
 
   @override
   _LanguageBarsState createState() => _LanguageBarsState();
@@ -18,24 +19,24 @@ class _LanguageBarsState extends State<LanguageBars>{
     return Container(
       alignment: Alignment.center,
       constraints: BoxConstraints(
-        minHeight: 100.h - AppBar().preferredSize.height,
+        minHeight: 100.h,
       ),
       child: Column(
         children: [
           GradientText(
-            "Languages (Technology)",
-            colors: [
+            "Languages",
+            colors: const [
               Colors.redAccent,
               Colors.deepOrangeAccent,
               Colors.blueAccent,
             ],
             gradientType: GradientType.linear,
             style: TextStyle(
-              fontSize: 8.sp,
+              fontSize: widget.isMobile ? 24.sp : 8.sp,
             ),
           ),
           Container(
-            width: 60.w,
+            width: widget.isMobile ? 80.w : 60.w,
             height: (100.h - AppBar().preferredSize.height) * 0.7,
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Align(
@@ -44,14 +45,13 @@ class _LanguageBarsState extends State<LanguageBars>{
                 shrinkWrap: true,
                 itemCount: languages.length,
                 separatorBuilder: (context, index) {
-                  return Divider();
+                  return const Divider();
                 },
                 itemBuilder: (context, index) {
-                  return Container(
-                    child: AnimatedLanguageBar(
-                      title: languages.keys.elementAt(index),
-                      progress: languages.values.elementAt(index),
-                    ),
+                  return AnimatedLanguageBar(
+                    title: languages.keys.elementAt(index),
+                    progress: languages.values.elementAt(index),
+                    isMobile: widget.isMobile,
                   );
                 },
               ),

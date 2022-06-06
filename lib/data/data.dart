@@ -40,26 +40,31 @@ List<Project> projects = [
     projectName: 'Project 1',
     projectDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus consequat, cursus lacus sit amet, sagittis risus. Mauris accumsan dictum ex ultricies lacinia',
     projectUrl: 'https://www.github.com',
+    projectImageUrl: "assets/images/phone-image.png"
   ),
   Project(
     projectName: 'Project 2',
     projectDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus consequat, cursus lacus sit amet, sagittis risus. Mauris accumsan dictum ex ultricies lacinia',
     projectUrl: 'https://www.github.com',
+    projectImageUrl: "assets/images/web-image.png"
   ),
   Project(
     projectName: 'Project 3',
     projectDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus consequat, cursus lacus sit amet, sagittis risus. Mauris accumsan dictum ex ultricies lacinia',
     projectUrl: 'https://www.github.com',
+    projectImageUrl: "assets/images/phone-image.png"
   ),
   Project(
     projectName: 'Project 4',
     projectDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus consequat, cursus lacus sit amet, sagittis risus. Mauris accumsan dictum ex ultricies lacinia',
     projectUrl: 'https://www.github.com',
+    projectImageUrl: "assets/images/web-image.png"
   ),
   Project(
     projectName: 'Project 5',
     projectDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet tellus consequat, cursus lacus sit amet, sagittis risus. Mauris accumsan dictum ex ultricies lacinia',
     projectUrl: 'https://www.github.com',
+    projectImageUrl: "assets/images/phone-image.png"
   ),
 ];
 

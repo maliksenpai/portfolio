@@ -7,7 +7,8 @@ import 'package:sizer/sizer.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class ExperienceArea extends StatelessWidget {
-  ExperienceArea({Key? key}) : super(key: key);
+  bool isMobile;
+  ExperienceArea({Key? key, required this.isMobile}) : super(key: key);
 
   DateFormat dateFormat = DateFormat('yyyy MM');
 
@@ -16,26 +17,27 @@ class ExperienceArea extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       constraints: BoxConstraints(
-        minHeight: 100.h - AppBar().preferredSize.height,
+        minHeight: 100.h,
       ),
       child: Column(
         children: [
           GradientText(
               "Experiences",
             colors: [
-              Colors.blueAccent,
               Colors.deepOrangeAccent,
-              Colors.redAccent,
+              Color(0xFFB71C1C),
             ],
             gradientType: GradientType.radial,
             style: TextStyle(
-              fontSize: 8.sp,
+              fontSize: isMobile ? 24.sp : 8.sp,
+              color: Colors.white70,
             ),
           ),
           Text(
             "Total experience duration: ${getExperinceDuration(experiences)}",
             style: TextStyle(
-              fontSize: 3.sp,
+              fontSize: isMobile ? 9.sp : 3.sp,
+              color: Colors.white70,
             ),
           ),
           Padding(
@@ -45,24 +47,24 @@ class ExperienceArea extends StatelessWidget {
               itemCount: experiences.length,
               separatorBuilder: (context, index) {
                 return const TimelineDivider(
-                  begin: 0.01,
-                  end: 0.99,
+                  begin: 0.05,
+                  end: 0.95,
                   thickness: 6,
-                  color: Colors.redAccent,
+                  color: Color(0xFFB71C1C),
                 );
               },
               itemBuilder: (context, index) {
                 if(index % 2 == 0){
                   return TimelineTile(
                     alignment: TimelineAlign.manual,
-                    lineXY: 0.01,
+                    lineXY: 0.05,
                     isFirst: index == 0,
                     indicatorStyle: const IndicatorStyle(
                       width: 20,
                       color: Colors.deepOrangeAccent,
                     ),
                     beforeLineStyle: const LineStyle(
-                      color: Colors.redAccent,
+                      color: Color(0xFFB71C1C),
                       thickness: 6,
                     ),
                     endChild: Container(
@@ -71,9 +73,9 @@ class ExperienceArea extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: [
-                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold),),
-                            SelectableText(experiences[index].description),
-                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.grey.shade500),),
+                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),),
+                            SelectableText(experiences[index].description, style: TextStyle(color: Colors.white70),),
+                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.white30),),
                           ],
                         ),
                       ),
@@ -82,10 +84,10 @@ class ExperienceArea extends StatelessWidget {
                 }else {
                   return TimelineTile(
                     alignment: TimelineAlign.manual,
-                    lineXY: 0.99,
+                    lineXY: 0.95,
                     isLast: index == experiences.length - 1,
                     beforeLineStyle: const LineStyle(
-                      color: Colors.redAccent,
+                      color: Color(0xFFB71C1C),
                       thickness: 6,
                     ),
                     indicatorStyle: const IndicatorStyle(
@@ -98,9 +100,9 @@ class ExperienceArea extends StatelessWidget {
                         alignment: Alignment.topRight,
                         child: Column(
                           children: [
-                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold),),
-                            SelectableText(experiences[index].description),
-                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.grey.shade500),),
+                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),),
+                            SelectableText(experiences[index].description, style: TextStyle(color: Colors.white70),),
+                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.white30),),
                           ],
                         ),
                       ),
@@ -117,7 +119,7 @@ class ExperienceArea extends StatelessWidget {
 }
 
 String getExperinceDuration(List<Experience> experience) {
-  Duration totalDuration = Duration(seconds: 0);
+  Duration totalDuration = const Duration(seconds: 0);
   experience.forEach((element) { 
     totalDuration = element.endTime.difference(element.startTime);
   });

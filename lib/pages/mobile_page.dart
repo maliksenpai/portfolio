@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/view/introduction_text_background_area.dart';
+import 'package:portfolio/view/mobile_drawer.dart';
 
 class MobilePage extends StatelessWidget {
   const MobilePage({Key? key}) : super(key: key);
@@ -7,11 +9,12 @@ class MobilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Text("Mobile")
-        ],
-      ),
+      drawer: MobileDrawer(),
+      body: Center(
+        child: SingleChildScrollView(
+          child: IntroductionTextBackgroundArea(isExtended: false,),
+        ),
+      )
     );
   }
 }

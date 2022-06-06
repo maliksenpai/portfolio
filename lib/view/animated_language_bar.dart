@@ -4,7 +4,8 @@ import 'package:sizer/sizer.dart';
 class AnimatedLanguageBar extends StatefulWidget {
   String title;
   double progress;
-  AnimatedLanguageBar({Key? key, required this.title, required this.progress}) : super(key: key);
+  bool isMobile;
+  AnimatedLanguageBar({Key? key, required this.title, required this.progress, required this.isMobile}) : super(key: key);
 
   @override
   _AnimatedLanguageBarState createState() => _AnimatedLanguageBarState();
@@ -18,7 +19,7 @@ class _AnimatedLanguageBarState extends State<AnimatedLanguageBar> with SingleTi
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 4),
+      duration: const Duration(seconds: 4),
       vsync: this,
     );
     progressValue = CurvedAnimation(
@@ -41,10 +42,11 @@ class _AnimatedLanguageBarState extends State<AnimatedLanguageBar> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Flex(
+      direction: widget.isMobile ? Axis.vertical : Axis.horizontal,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.title),
+        Text(widget.title, style: const TextStyle(color: Colors.white70),),
         AnimatedBuilder(
           animation: _controller,
           builder: (context, widget) {
@@ -56,7 +58,8 @@ class _AnimatedLanguageBarState extends State<AnimatedLanguageBar> with SingleTi
               ),
             );
           },
-        )
+        ),
+        Text("${widget.progress * 10}%", style: const TextStyle(color: Colors.white70))
       ],
     );
   }

@@ -1,20 +1,22 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/model/project.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ProjectCarouselItem extends StatefulWidget {
+class ProjectItem extends StatefulWidget {
   Project project;
-  ProjectCarouselItem({Key? key, required this.project}) : super(key: key);
+
+  ProjectItem({Key? key, required this.project}) : super(key: key);
 
   @override
-  State<ProjectCarouselItem> createState() => _ProjectCarouselItemState();
+  State<ProjectItem> createState() => _ProjectItemState();
 }
 
-class _ProjectCarouselItemState extends State<ProjectCarouselItem> {
+class _ProjectItemState extends State<ProjectItem> {
   List<Color> colorList = [
     Colors.red,
     Colors.blue,
@@ -33,11 +35,21 @@ class _ProjectCarouselItemState extends State<ProjectCarouselItem> {
   Color topColor = Colors.yellow;
   Alignment begin = Alignment.bottomLeft;
   Alignment end = Alignment.topRight;
+
   var random = Random();
 
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 3), (timer) {
+    if (mounted) {
+      setState(() {
+        index = index + random.nextInt(5);
+        bottomColor = colorList[index % colorList.length];
+        topColor = colorList[(index + 1) % colorList.length];
+        begin = alignmentList[index % alignmentList.length];
+        end = alignmentList[(index + 2) % alignmentList.length];
+      });
+    }
+    Timer.periodic(const Duration(seconds: 2), (timer) {
       if (mounted) {
         setState(() {
           index = index + random.nextInt(5);
@@ -58,13 +70,17 @@ class _ProjectCarouselItemState extends State<ProjectCarouselItem> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
             begin: begin, end: end, colors: [bottomColor, topColor]),
+        borderRadius: BorderRadius.circular(8),
       ),
-      width: 70.w,
-      height: (100.h - AppBar().preferredSize.height) * 0.4,
+      width: 40.w,
       padding: const EdgeInsets.symmetric(horizontal: 36),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Image.asset(
+            widget.project.projectImageUrl.toString(),
+            height: 100.h * 0.4,
+          ),
           SelectableText(
             widget.project.projectName,
             style: const TextStyle(
