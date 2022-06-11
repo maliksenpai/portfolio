@@ -7,19 +7,25 @@ import 'package:sizer/sizer.dart';
 class IntroductionProjects extends StatefulWidget {
   bool isMobile;
   bool isExtended;
-  IntroductionProjects({Key? key, required this.isMobile, required this.isExtended}) : super(key: key);
+
+  IntroductionProjects(
+      {Key? key, required this.isMobile, required this.isExtended})
+      : super(key: key);
 
   @override
   State<IntroductionProjects> createState() => _IntroductionProjectsState();
 }
 
 class _IntroductionProjectsState extends State<IntroductionProjects> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      width: widget.isExtended ? 90.w : 95.w,
+      width: widget.isMobile
+          ? 100.w
+          : widget.isExtended
+              ? 90.w
+              : 95.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -31,27 +37,33 @@ class _IntroductionProjectsState extends State<IntroductionProjects> {
               Colors.redAccent,
             ],
             gradientType: GradientType.linear,
-            style: TextStyle(
-                fontSize: widget.isMobile ? 24.sp : 8.sp
-            ),
+            style: TextStyle(fontSize: widget.isMobile ? 24.sp : 8.sp),
           ),
           Text(
             "Number of Project: ${projects.length}",
             style: TextStyle(
-                fontSize: widget.isMobile ? 9.sp : 3.sp
+              fontSize: widget.isMobile ? 9.sp : 3.sp,
+              color: Colors.white70,
             ),
           ),
           ListView.builder(
             shrinkWrap: true,
             itemCount: projects.length,
-            itemBuilder: (context, index){
+            itemBuilder: (context, index) {
               return Container(
-                height: 80.h,
-                child: Align(
-                  alignment: index % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
-                  child: ProjectItem(project: projects[index],),
-                )
-              );
+                  padding: widget.isMobile
+                      ? EdgeInsets.symmetric(vertical: 12)
+                      : EdgeInsets.zero,
+                  height: 80.h,
+                  child: Align(
+                    alignment: index % 2 == 0
+                        ? Alignment.centerLeft
+                        : Alignment.centerRight,
+                    child: ProjectItem(
+                      project: projects[index],
+                      isMobile: widget.isMobile,
+                    ),
+                  ));
             },
           )
         ],

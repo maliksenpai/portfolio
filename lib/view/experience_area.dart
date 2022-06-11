@@ -8,6 +8,7 @@ import 'package:timeline_tile/timeline_tile.dart';
 
 class ExperienceArea extends StatelessWidget {
   bool isMobile;
+
   ExperienceArea({Key? key, required this.isMobile}) : super(key: key);
 
   DateFormat dateFormat = DateFormat('yyyy MM');
@@ -22,7 +23,7 @@ class ExperienceArea extends StatelessWidget {
       child: Column(
         children: [
           GradientText(
-              "Experiences",
+            "Experiences",
             colors: [
               Colors.deepOrangeAccent,
               Color(0xFFB71C1C),
@@ -54,7 +55,7 @@ class ExperienceArea extends StatelessWidget {
                 );
               },
               itemBuilder: (context, index) {
-                if(index % 2 == 0){
+                if (index % 2 == 0) {
                   return TimelineTile(
                     alignment: TimelineAlign.manual,
                     lineXY: 0.05,
@@ -73,15 +74,28 @@ class ExperienceArea extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: [
-                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),),
-                            SelectableText(experiences[index].description, style: TextStyle(color: Colors.white70),),
-                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.white30),),
+                            SelectableText(
+                              experiences[index].companyName,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white70),
+                            ),
+                            SelectableText(
+                              experiences[index].description,
+                              style: TextStyle(color: Colors.white70),
+                            ),
+                            SelectableText(
+                              dateFormat.format(experiences[index].startTime) +
+                                  ' - ' +
+                                  dateFormat.format(experiences[index].endTime),
+                              style: TextStyle(color: Colors.white30),
+                            ),
                           ],
                         ),
                       ),
                     ),
                   );
-                }else {
+                } else {
                   return TimelineTile(
                     alignment: TimelineAlign.manual,
                     lineXY: 0.95,
@@ -100,9 +114,22 @@ class ExperienceArea extends StatelessWidget {
                         alignment: Alignment.topRight,
                         child: Column(
                           children: [
-                            SelectableText(experiences[index].companyName, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),),
-                            SelectableText(experiences[index].description, style: TextStyle(color: Colors.white70),),
-                            SelectableText(dateFormat.format(experiences[index].startTime) + ' - ' + dateFormat.format(experiences[index].endTime), style: TextStyle(color: Colors.white30),),
+                            SelectableText(
+                              experiences[index].companyName,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white70),
+                            ),
+                            SelectableText(
+                              experiences[index].description,
+                              style: TextStyle(color: Colors.white70),
+                            ),
+                            SelectableText(
+                              dateFormat.format(experiences[index].startTime) +
+                                  ' - ' +
+                                  dateFormat.format(experiences[index].endTime),
+                              style: TextStyle(color: Colors.white30),
+                            ),
                           ],
                         ),
                       ),
@@ -120,15 +147,21 @@ class ExperienceArea extends StatelessWidget {
 
 String getExperinceDuration(List<Experience> experience) {
   Duration totalDuration = const Duration(seconds: 0);
-  experience.forEach((element) { 
+  experience.forEach((element) {
     totalDuration = element.endTime.difference(element.startTime);
   });
   String durationString = "";
-  durationString += totalDuration.inDays > 365 ? "Year: ${(totalDuration.inDays / 365).floorToDouble()} " : "";
-  durationString += totalDuration.inDays > 30 ? "Month: ${((totalDuration.inDays % 365)/30).floorToDouble()} " : "";
-  durationString += totalDuration.inDays > 1 ? "Day: ${((totalDuration.inDays % 365) % 30)}" : "";
-  if(durationString == ""){
+  durationString += totalDuration.inDays > 365
+      ? "Year: ${(totalDuration.inDays / 365).floorToDouble()} "
+      : "";
+  durationString += totalDuration.inDays > 30
+      ? "Month: ${((totalDuration.inDays % 365) / 30).floorToDouble()} "
+      : "";
+  durationString += totalDuration.inDays > 1
+      ? "Day: ${((totalDuration.inDays % 365) % 30)}"
+      : "";
+  if (durationString == "") {
     durationString = "Inexperienced";
   }
   return durationString;
-}  
+}

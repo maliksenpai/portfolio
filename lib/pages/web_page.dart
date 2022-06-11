@@ -1,9 +1,7 @@
 import 'package:fancy_cursor/fancy_cursor.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/experience_area.dart';
-import 'package:portfolio/view/introduction_image_area.dart';
 import 'package:portfolio/view/introduction_project_carousel.dart';
-import 'package:portfolio/view/introduction_text_area.dart';
 import 'package:portfolio/view/introduction_web_area.dart';
 import 'package:portfolio/view/languages_bars.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -26,7 +24,8 @@ class _WebPageState extends State<WebPage> {
   @override
   void initState() {
     super.initState();
-    sidebarXController = SidebarXController(selectedIndex: selectedIndex, extended: isExtended);
+    sidebarXController =
+        SidebarXController(selectedIndex: selectedIndex, extended: isExtended);
   }
 
   @override
@@ -77,7 +76,10 @@ class _WebPageState extends State<WebPage> {
                       color: Color(0xFFB71C1C),
                     ),
                     label: 'Projects',
-                    onTap: () => {scrollController.scrollToIndex(2, preferPosition: AutoScrollPosition.begin)}),
+                    onTap: () => {
+                          scrollController.scrollToIndex(2,
+                              preferPosition: AutoScrollPosition.begin)
+                        }),
                 SidebarXItem(
                     iconWidget: const Icon(
                       Icons.sort,
@@ -133,7 +135,10 @@ class _WebPageState extends State<WebPage> {
                       index: 0,
                       key: const ValueKey(0),
                       controller: scrollController,
-                      child: IntroductionWebArea(isExtended: isExtended, isSmallScreen: false,),
+                      child: IntroductionWebArea(
+                        isExtended: isExtended,
+                        isSmallScreen: false,
+                      ),
                     );
                   } else if (index == 1) {
                     return AutoScrollTag(

@@ -20,19 +20,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Sizer(
-        builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
             primarySwatch: Colors.blue,
-            textTheme: GoogleFonts.latoTextTheme(textTheme)
-          ),
-          home: const SafeArea(
-            child: LayoutPage(),
-          ),
-        );
-      }
-    );
+            textTheme: GoogleFonts.latoTextTheme(textTheme)),
+        home: const SafeArea(
+          child: LayoutPage(),
+        ),
+      );
+    });
   }
 }

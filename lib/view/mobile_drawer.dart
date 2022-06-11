@@ -70,7 +70,6 @@ class MobileDrawer extends Drawer {
               },
             ),
           )
-
         ],
       ),
     );

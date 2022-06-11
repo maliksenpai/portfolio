@@ -3,9 +3,10 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "636a030f0c72ff2eed6a9a7c87d8d5d5",
+  "assets/AssetManifest.json": "f7229c3f249ee8a4a3c97a0df436f8d1",
 "assets/assets/images/github.png": "ec3a60c8c6539a07eb70b52f6737ea6e",
 "assets/assets/images/linkedin.png": "30c453b7f5fbdb09ea0cb42a5dc7a6e5",
+"assets/assets/images/mobile-background.png": "c4191a245417ea953392ca2be95c48d4",
 "assets/assets/images/parallax-1.jpeg": "7247f179c0cc05c4961c8d155d02c78c",
 "assets/assets/images/parallax-2.jpeg": "5a19dfb3d6b4f7fda40f969f29f35e71",
 "assets/assets/images/phone-image.png": "237c1561e76394099583f71990471b2e",
@@ -23,9 +24,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "1d69046687be4ef005d69eace4738800",
-"/": "1d69046687be4ef005d69eace4738800",
-"main.dart.js": "0997e62541503e09b2238e78ab0117d3",
+"index.html": "3fc4fd00b9a4fc3f62f7077dd2e57f21",
+"/": "3fc4fd00b9a4fc3f62f7077dd2e57f21",
+"main.dart.js": "819c518aeff8763bf4f5c7afbb0dc237",
 "manifest.json": "e74af8957b5899dc6da961caee768ec9",
 "version.json": "009c9e65172e010890f7f65fde438006"
 };

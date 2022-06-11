@@ -9,8 +9,10 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 class ProjectItem extends StatefulWidget {
   Project project;
+  bool isMobile;
 
-  ProjectItem({Key? key, required this.project}) : super(key: key);
+  ProjectItem({Key? key, required this.project, required this.isMobile})
+      : super(key: key);
 
   @override
   State<ProjectItem> createState() => _ProjectItemState();
@@ -72,14 +74,17 @@ class _ProjectItemState extends State<ProjectItem> {
             begin: begin, end: end, colors: [bottomColor, topColor]),
         borderRadius: BorderRadius.circular(8),
       ),
-      width: 40.w,
-      padding: const EdgeInsets.symmetric(horizontal: 36),
+      width: widget.isMobile ? 100.w : 40.w,
+      padding: EdgeInsets.symmetric(
+          horizontal: 36, vertical: widget.isMobile ? 12 : 0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: widget.isMobile
+            ? MainAxisAlignment.center
+            : MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
             widget.project.projectImageUrl.toString(),
-            height: 100.h * 0.4,
+            height: 90.h * 0.4,
           ),
           SelectableText(
             widget.project.projectName,

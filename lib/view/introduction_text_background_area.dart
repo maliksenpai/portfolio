@@ -9,7 +9,9 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 class IntroductionTextBackgroundArea extends StatelessWidget {
   bool isExtended;
-  IntroductionTextBackgroundArea({Key? key, required this.isExtended}) : super(key: key);
+
+  IntroductionTextBackgroundArea({Key? key, required this.isExtended})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +24,16 @@ class IntroductionTextBackgroundArea extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: isExtended ? 90.w : 95.w,
+          width: 100.w,
           height: 100.h,
           alignment: Alignment.center,
           child: Stack(
             children: [
               Image.asset(
                 image,
-                width: isExtended ? 90.w : 95.w,
+                width: 100.w,
                 height: 100.h,
-                opacity: AlwaysStoppedAnimation(0.5),
+                opacity: AlwaysStoppedAnimation(1),
                 fit: BoxFit.cover,
               ),
               Padding(
@@ -47,7 +49,7 @@ class IntroductionTextBackgroundArea extends StatelessWidget {
                             name,
                             textStyle: const TextStyle(
                               fontSize: 64.0,
-                              color: Colors.blueAccent,
+                              color: Color(0xFFB71C1C),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -61,14 +63,13 @@ class IntroductionTextBackgroundArea extends StatelessWidget {
                           ),
                         ],
                         repeatForever: true,
+                        pause: Duration.zero,
                       ),
                     ),
                     SelectableText(
                       personDescription,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white70,
-                      ),
+                      style: TextStyle(color: Colors.white70),
                     ),
                     SizedBox(
                       height: 36,
@@ -106,12 +107,12 @@ class IntroductionTextBackgroundArea extends StatelessWidget {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'You can contact me with this email address:',
+                            text: 'You can contact me with this email address:',
                           ),
                           TextSpan(
                               text: emailAddress,
                               style: TextStyle(
-                                color: Colors.blueAccent,
+                                color: Color(0xFFB71C1C),
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () => launchUrl(emailLaunchUri)),
