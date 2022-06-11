@@ -8,7 +8,8 @@ class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MediaQuery.of(context).size.width > 768 ? const WebPage() : const MobilePage()
-    );
+        body: MediaQuery.of(context).size.width > 768
+            ? const WebPage()
+            : const MobilePage());
   }
 }

@@ -38,10 +38,16 @@ dependencies:
   url_launcher: ^6.0.20
   url_launcher_web:
   parallax_image: ^0.3.1+1
-  scrollable_positioned_list: ^0.2.3
+  scroll_to_index: ^2.1.1
   timeline_tile: ^2.0.0
   intl: ^0.17.0
   simple_gradient_text: ^1.2.3
+  carousel_slider: ^4.1.1
+  sizer: ^2.0.15
+  fancy_cursor: ^0.1.2
+  google_fonts: ^3.0.1
+  mouse_parallax: ^1.1.0
+  sidebarx: ^0.4.0
 
 dev_dependencies:
   flutter_test:
