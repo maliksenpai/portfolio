@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/languages_bars.dart';
+import 'package:portfolio/view/languages_bars_small.dart';
 import 'package:portfolio/view/sidebar_mobile.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -49,9 +49,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            child: LanguageBars(
-              isMobile: true,
-            ),
+            child: LanguageBarsSmall(),
           ),
         ),
       ),

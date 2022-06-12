@@ -10,12 +10,9 @@ import 'package:url_launcher/url_launcher_string.dart';
 import '../data/data.dart';
 
 class IntroductionWebArea extends StatelessWidget {
-  bool isSmallScreen;
   bool isExtended;
 
-  IntroductionWebArea(
-      {Key? key, required this.isExtended, required this.isSmallScreen})
-      : super(key: key);
+  IntroductionWebArea({Key? key, required this.isExtended}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +40,12 @@ class IntroductionWebArea extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.only(left: isSmallScreen ? 10.w : 3.w),
+                padding: EdgeInsets.only(left: 3.w),
                 child: ParallaxImage(
                   image: image2,
                   extent: 10000.0,
                   child: Container(
-                    width: isSmallScreen ? fullWidth : 30.w,
+                    width: 30.w,
                     height: 100.h * 0.4,
                   ),
                 ),
@@ -63,7 +60,7 @@ class IntroductionWebArea extends StatelessWidget {
                 image: image1,
                 extent: 10000.0,
                 child: Container(
-                  width: isSmallScreen ? fullWidth : 30.w,
+                  width: 30.w,
                   height: 100.h * 0.7,
                 ),
               ),

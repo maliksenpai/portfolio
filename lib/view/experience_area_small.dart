@@ -5,8 +5,8 @@ import 'package:portfolio/data/data.dart';
 import 'package:sizer/sizer.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class ExperienceArea extends StatelessWidget {
-  ExperienceArea({Key? key}) : super(key: key);
+class ExperienceAreaSmall extends StatelessWidget {
+  ExperienceAreaSmall({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +15,15 @@ class ExperienceArea extends StatelessWidget {
       constraints: BoxConstraints(
         minHeight: 100.h,
       ),
-      child: Column(
+      child: ListView(
         children: [
-          ExperienceAreaTitle(experiences: experiences, isMobile: false),
+          ExperienceAreaTitle(experiences: experiences, isMobile: true),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ListView.separated(
               shrinkWrap: true,
               itemCount: experiences.length,
+              physics: const NeverScrollableScrollPhysics(),
               separatorBuilder: (context, index) {
                 return const TimelineDivider(
                   begin: 0.05,

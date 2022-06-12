@@ -1,7 +1,7 @@
 import 'package:fancy_cursor/fancy_cursor.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/experience_area.dart';
-import 'package:portfolio/view/introduction_project_carousel.dart';
+import 'package:portfolio/view/introduction_projects.dart';
 import 'package:portfolio/view/introduction_web_area.dart';
 import 'package:portfolio/view/languages_bars.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -137,7 +137,6 @@ class _WebPageState extends State<WebPage> {
                       controller: scrollController,
                       child: IntroductionWebArea(
                         isExtended: isExtended,
-                        isSmallScreen: false,
                       ),
                     );
                   } else if (index == 1) {
@@ -145,9 +144,7 @@ class _WebPageState extends State<WebPage> {
                       index: 1,
                       key: const ValueKey(1),
                       controller: scrollController,
-                      child: ExperienceArea(
-                        isMobile: false,
-                      ),
+                      child: ExperienceArea(),
                     );
                   } else if (index == 2) {
                     return AutoScrollTag(
@@ -155,7 +152,6 @@ class _WebPageState extends State<WebPage> {
                       key: const ValueKey(2),
                       controller: scrollController,
                       child: IntroductionProjects(
-                        isMobile: false,
                         isExtended: isExtended,
                       ),
                     );
@@ -164,9 +160,7 @@ class _WebPageState extends State<WebPage> {
                       index: 3,
                       key: const ValueKey(3),
                       controller: scrollController,
-                      child: LanguageBars(
-                        isMobile: false,
-                      ),
+                      child: LanguageBars(),
                     );
                   } else {
                     return Container();

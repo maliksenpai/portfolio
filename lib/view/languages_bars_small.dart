@@ -4,14 +4,14 @@ import 'package:portfolio/data/data.dart';
 import 'package:portfolio/view/animated_language_bar.dart';
 import 'package:sizer/sizer.dart';
 
-class LanguageBars extends StatefulWidget {
-  LanguageBars({Key? key}) : super(key: key);
+class LanguageBarsSmall extends StatefulWidget {
+  LanguageBarsSmall({Key? key}) : super(key: key);
 
   @override
   _LanguageBarsState createState() => _LanguageBarsState();
 }
 
-class _LanguageBarsState extends State<LanguageBars> {
+class _LanguageBarsState extends State<LanguageBarsSmall> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,10 +21,12 @@ class _LanguageBarsState extends State<LanguageBars> {
       ),
       child: Column(
         children: [
-          LanguagesTitle(isMobile: false),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: LanguagesTitle(isMobile: true),
+          ),
           Container(
-            width: 70.w,
-            height: 100.h * 0.7,
+            width: 100.w,
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Align(
               alignment: Alignment.center,
@@ -42,7 +44,7 @@ class _LanguageBarsState extends State<LanguageBars> {
                       description:
                           languages.values.elementAt(index).description,
                       progress: languages.values.elementAt(index).level,
-                      isMobile: false,
+                      isMobile: true,
                     ),
                   );
                 },
