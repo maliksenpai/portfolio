@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/experience_area.dart';
+import 'package:portfolio/view/experience_area_small.dart';
 import 'package:portfolio/view/sidebar_mobile.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -41,18 +41,14 @@ class _ExperiencesPageState extends State<ExperiencesPage> {
         isExtended: isExtended,
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/mobile-background.png"),
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-            child: ExperienceArea(
-              isMobile: true,
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/mobile-background.png"),
+              fit: BoxFit.fitHeight,
             ),
           ),
+          child: ExperienceAreaSmall(),
         ),
       ),
     );

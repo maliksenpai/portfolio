@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/introduction_project_carousel.dart';
+import 'package:portfolio/view/introduction_projects_small.dart';
 import 'package:portfolio/view/sidebar_mobile.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -49,8 +49,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            child: IntroductionProjects(
-              isMobile: true,
+            child: IntroductionProjectsSmall(
               isExtended: false,
             ),
           ),
