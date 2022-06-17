@@ -43,7 +43,7 @@ class ExperienceAreaTitle extends StatelessWidget {
 String getExperinceDuration(List<Experience> experience) {
   Duration totalDuration = const Duration(seconds: 0);
   experience.forEach((element) {
-    totalDuration = element.endTime.difference(element.startTime);
+    totalDuration += element.endTime.difference(element.startTime);
   });
   String durationString = "";
   durationString += totalDuration.inDays > 365

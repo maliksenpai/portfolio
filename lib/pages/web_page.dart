@@ -1,5 +1,6 @@
 import 'package:fancy_cursor/fancy_cursor.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/view/certificates_area.dart';
 import 'package:portfolio/view/experience_area.dart';
 import 'package:portfolio/view/introduction_projects.dart';
 import 'package:portfolio/view/introduction_web_area.dart';
@@ -87,6 +88,16 @@ class _WebPageState extends State<WebPage> {
                     ),
                     label: 'Languages',
                     onTap: () => {scrollController.scrollToIndex(3)}),
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.description,
+                    color: Color(0xFFB71C1C),
+                  ),
+                  label: 'Certificates',
+                  onTap: () {
+                    scrollController.scrollToIndex(4);
+                  },
+                )
               ],
               headerBuilder: (context, expanded) {
                 return Container(
@@ -126,46 +137,44 @@ class _WebPageState extends State<WebPage> {
             ),
             Container(
               width: isExtended ? 90.w : 95.w,
-              child: ListView.builder(
+              child: ListView(
                 controller: scrollController,
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return AutoScrollTag(
-                      index: 0,
-                      key: const ValueKey(0),
-                      controller: scrollController,
-                      child: IntroductionWebArea(
-                        isExtended: isExtended,
-                      ),
-                    );
-                  } else if (index == 1) {
-                    return AutoScrollTag(
-                      index: 1,
-                      key: const ValueKey(1),
-                      controller: scrollController,
-                      child: ExperienceArea(),
-                    );
-                  } else if (index == 2) {
-                    return AutoScrollTag(
-                      index: 2,
-                      key: const ValueKey(2),
-                      controller: scrollController,
-                      child: IntroductionProjects(
-                        isExtended: isExtended,
-                      ),
-                    );
-                  } else if (index == 3) {
-                    return AutoScrollTag(
-                      index: 3,
-                      key: const ValueKey(3),
-                      controller: scrollController,
-                      child: LanguageBars(),
-                    );
-                  } else {
-                    return Container();
-                  }
-                },
+                children: [
+                  AutoScrollTag(
+                    index: 0,
+                    key: const ValueKey(0),
+                    controller: scrollController,
+                    child: IntroductionWebArea(
+                      isExtended: isExtended,
+                    ),
+                  ),
+                  AutoScrollTag(
+                    index: 1,
+                    key: const ValueKey(1),
+                    controller: scrollController,
+                    child: ExperienceArea(),
+                  ),
+                  AutoScrollTag(
+                    index: 2,
+                    key: const ValueKey(2),
+                    controller: scrollController,
+                    child: IntroductionProjects(
+                      isExtended: isExtended,
+                    ),
+                  ),
+                  AutoScrollTag(
+                    index: 3,
+                    key: const ValueKey(3),
+                    controller: scrollController,
+                    child: LanguageBars(),
+                  ),
+                  AutoScrollTag(
+                    index: 4,
+                    key: const ValueKey(4),
+                    controller: scrollController,
+                    child: const CertificatesArea(),
+                  )
+                ],
               ),
             ),
           ],

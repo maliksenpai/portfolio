@@ -27,6 +27,7 @@ class _IntroductionProjectsState extends State<IntroductionProjects> {
           ListView.builder(
             shrinkWrap: true,
             itemCount: projects.length,
+            cacheExtent: 20000.h,
             itemBuilder: (context, index) {
               return IntroductionProjectItem(
                 isMobile: false,

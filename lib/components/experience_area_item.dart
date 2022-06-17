@@ -45,9 +45,9 @@ class ExperienceAreaItem extends StatelessWidget {
                   style: const TextStyle(color: Colors.white70),
                 ),
                 SelectableText(
-                  dateFormat.format(item.startTime) +
+                  dateFormat.format(item.endTime) +
                       ' - ' +
-                      dateFormat.format(item.endTime),
+                      dateFormat.format(item.startTime),
                   style: const TextStyle(color: Colors.white30),
                 ),
               ],
@@ -84,9 +84,9 @@ class ExperienceAreaItem extends StatelessWidget {
                   style: const TextStyle(color: Colors.white70),
                 ),
                 SelectableText(
-                  dateFormat.format(item.startTime) +
+                  dateFormat.format(item.endTime) +
                       ' - ' +
-                      dateFormat.format(item.endTime),
+                      dateFormat.format(item.startTime),
                   style: const TextStyle(color: Colors.white30),
                 ),
               ],

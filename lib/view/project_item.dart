@@ -96,11 +96,14 @@ class _ProjectItemState extends State<ProjectItem> {
           ),
           SelectableText(widget.project.projectDescription),
           if (widget.project.projectUrl != null)
-            InkWell(
-              child: Text(widget.project.projectUrl!),
-              onTap: () {
-                launchUrlString(widget.project.projectUrl!);
-              },
+            Padding(
+              padding: widget.isMobile ? const EdgeInsets.only(top: 24) : const EdgeInsets.all(0),
+              child: InkWell(
+                child: Text(widget.project.projectUrl!, style: TextStyle(color: Color(0xFFB71C1C)),),
+                onTap: () {
+                  launchUrlString(widget.project.projectUrl!);
+                },
+              ),
             )
         ],
       ),

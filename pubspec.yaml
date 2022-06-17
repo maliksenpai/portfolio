@@ -48,6 +48,7 @@ dependencies:
   google_fonts: ^3.0.1
   mouse_parallax: ^1.1.0
   sidebarx: ^0.4.0
+  flip_card: ^0.6.0
 
 dev_dependencies:
   flutter_test:
