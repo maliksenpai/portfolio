@@ -52,11 +52,24 @@ List<Experience> experiences = [
 
 List<Project> projects = [
   Project(
-    projectName: 'Front-End Developer in Defense Industry Project',
+    projectName: 'Aselsan Project',
     projectDescription:
-        'Within the scope of a project initiated by Aselsan, I am mostly responsible for developing front-end and some back-end project. I developed with Flutter and Java.',
+    '''I'm working for Aselsan project as Frontend Developer since 09/2022''',
     projectUrl: '',
     projectImageUrl: "assets/images/aselsan.png",
+  ),
+  Project(
+    projectName: 'Front-End Developer in Defense Industry Project',
+    projectDescription: 'I worked for Aselsan project as Frontend Developer. (02/2021 - 11/2021)',
+    projectUrl: '',
+    projectImageUrl: "assets/images/aselsan.png",
+  ),
+  Project(
+    projectName: 'DETSIS',
+    projectDescription:
+        '''I worked on DETSIS as frontend developer. In this project I took charge refactor about project's systematic and UI. The data in the DETSIS are defined in the system by the relevant public institutions and organizations, and the relevant institutions and organizations are responsible for the accuracy and up-to-dateness of the data.''',
+    projectUrl: 'https://detsis.gov.tr/',
+    projectImageUrl: "assets/images/detsis.png",
   ),
   Project(
     projectName: 'React Validatable Form',
@@ -64,6 +77,28 @@ List<Project> projects = [
         'Form that can be used in React and similar projects (React Native, Nextjs...). It is an open source project that provides control of processes.',
     projectUrl: 'https://github.com/obss/react-validatable-form',
     projectImageUrl: "assets/images/rvf.png",
+  ),
+  Project(
+    projectName: 'Kards Project Management (Open Source Project)',
+    projectDescription:
+        'I helped Kards project for vanilla web development in my free times. A simple cards-based kanban board web app heavily inspired by Trello, the UI is also pretty similar to that of Trello. You can create upto 512 unique kanban boards with different names, which holds cards. Each card can hold an unlimited number of items/tasks each. All items support drag and drop between cards as well as within the same card to reoder. All data is stored locally on the computer by the browser. This whole project was written in HTML, CSS, and pure vanilla JavaScript with no external dependencies',
+    projectUrl: 'https://github.com/maliksenpai/kards',
+    projectImageUrl: "assets/images/kards.png",
+  ),
+  Project(
+    projectName: 'Flutter Collapsible Sidebar (Open Source Project)',
+    projectDescription:
+        'I helped Flutter Collapsible Sidebar project for Flutter in my free times. A collapsible sidebar for Flutter apps implementing the Material Design',
+    projectUrl: 'https://github.com/maliksenpai/flutter_collapsible_sidebar',
+    projectImageUrl: "assets/images/fcs.png",
+  ),
+  Project(
+    projectName:
+        'Language Development Application with Kotlin With the Help of Firebase and Topic Analysis with Machine Learning',
+    projectDescription:
+        'In the android language development application made with Kotlin, exercises were prepared for activities such as writing, translation and speaking. And the user can take a photo and detect the text in the photo with the help of Firebase and translate it into the language he wants. In addition, these articles are stored in the database. An application that detects which areas the users using the application are interested in with the Bayesian method.',
+    projectUrl: 'https://github.com/maliksenpai/bitirme',
+    projectImageUrl: "assets/images/graduate_project.png",
   ),
   Project(
     projectName: 'Flutter Gamemate Finder App',
@@ -94,13 +129,6 @@ List<Project> projects = [
     projectImageUrl: "assets/images/iot_flutter.png",
   ),
   Project(
-    projectName: 'Language Development Application with Kotlin With the Help of Firebase and Topic Analysis with Machine Learning',
-    projectDescription:
-        'In the android language development application made with Kotlin, exercises were prepared for activities such as writing, translation and speaking. And the user can take a photo and detect the text in the photo with the help of Firebase and translate it into the language he wants. In addition, these articles are stored in the database. An application that detects which areas the users using the application are interested in with the Bayesian method.',
-    projectUrl: 'https://github.com/maliksenpai/bitirme',
-    projectImageUrl: "assets/images/graduate_project.png",
-  ),
-  Project(
     projectName: 'React and React Native Messaging App',
     projectDescription:
         'It is a messaging application that can work on React and react native together and uses firebase services as a backend, with simple-level operations. React-Native Link: https://github.com/maliksenpai/ReactNativeChat ReactJs Link: https://github.com/maliksenpai/ReactJsChat',
@@ -117,49 +145,49 @@ List<Project> projects = [
   Project(
     projectName: 'Paint App',
     projectDescription:
-    'It is a drawing application made with Flutter. There are features such as arrangement of layers, different brush types and sizes in the application. However, it was suspended due to optimization problems in the project.',
+        'It is a drawing application made with Flutter. There are features such as arrangement of layers, different brush types and sizes in the application. However, it was suspended due to optimization problems in the project.',
     projectUrl: 'https://github.com/maliksenpai/PaintApp',
     projectImageUrl: "assets/images/paint.png",
   ),
   Project(
     projectName: 'MediaPlayerTube',
     projectDescription:
-    'In this application developed with Flutter, you can both listen to music and watch videos. Both are developed for android and ios. In addition, Provider is used in the application.',
+        'In this application developed with Flutter, you can both listen to music and watch videos. Both are developed for android and ios. In addition, Provider is used in the application.',
     projectUrl: 'https://github.com/maliksenpai/media_player_tube',
     projectImageUrl: "assets/images/media_player.png",
   ),
   Project(
     projectName: 'Kotlin Animlist',
     projectDescription:
-    'It is an android application developed with Kotlin language. Data from an API is listed in this application. This data contains anime information and these animes can be added to favorites. These favorites are stored in the database inside the phone. The application is as clean as possible and the most important android development technologies are used.',
+        'It is an android application developed with Kotlin language. Data from an API is listed in this application. This data contains anime information and these animes can be added to favorites. These favorites are stored in the database inside the phone. The application is as clean as possible and the most important android development technologies are used.',
     projectUrl: 'https://github.com/maliksenpai/AnimList',
     projectImageUrl: "assets/images/animlist.png",
   ),
   Project(
     projectName: 'React E-Commerce',
     projectDescription:
-    'In this application developed with React, the data held by Firebase is listed. These items can be added to the cart and purchased experimentally. In addition, auth transactions were made with Firebase.',
+        'In this application developed with React, the data held by Firebase is listed. These items can be added to the cart and purchased experimentally. In addition, auth transactions were made with Firebase.',
     projectUrl: 'https://github.com/maliksenpai/firebase-e-commerce',
     projectImageUrl: "assets/images/react_e_commerce.png",
   ),
   Project(
     projectName: '5e Turkish',
     projectDescription:
-    'It is an application made to show the rules of the 5e game and the information about the game to the players comfortably. Data is retrieved from JSONs within the application and displayed to the user in a convenient way. The application was made with Kotlin.',
+        'It is an application made to show the rules of the 5e game and the information about the game to the players comfortably. Data is retrieved from JSONs within the application and displayed to the user in a convenient way. The application was made with Kotlin.',
     projectUrl: 'https://github.com/maliksenpai/5eCeviri',
     projectImageUrl: "assets/images/5eturkish.png",
   ),
   Project(
     projectName: 'React Native Galery App',
     projectDescription:
-    'It is a React Native application developed with Javascript. In this application, the information of old works of art is listed with an API and these works of art can be examined in detail. In addition, works of art can be added to favorites and stored in the database in the phone itself. In addition, there are pagination and filter search in the application.',
+        'It is a React Native application developed with Javascript. In this application, the information of old works of art is listed with an API and these works of art can be examined in detail. In addition, works of art can be added to favorites and stored in the database in the phone itself. In addition, there are pagination and filter search in the application.',
     projectUrl: 'https://github.com/maliksenpai/FindTeamMate',
     projectImageUrl: "assets/images/galery_app.png",
   ),
   Project(
     projectName: 'Kotlin Start-Up Application',
     projectDescription:
-    'Android application made to create a start-up team with Kotlin or to find new people for the team. Backend part is made with Firebase.',
+        'Android application made to create a start-up team with Kotlin or to find new people for the team. Backend part is made with Firebase.',
     projectUrl: 'https://github.com/maliksenpai/FindTeamMate',
     projectImageUrl: "assets/images/kotlin_startup.png",
   ),
@@ -172,7 +200,7 @@ Map<String, Language> languages = {
         'I have about 2.5 years of experience with Flutter. I have developed projects both professionally and individually. I also help people on Stackoverflow. I developed a lot of projects with Flutter because projects can be developed very quickly. I have a lot of experience with widely used libraries such as Getx, Bloc, Dio. That\'s why I can quickly adapt to most projects.',
   ),
   "Javascript-React": Language(
-    level: 8.0,
+    level: 9.5,
     description:
         'I have about 1.5 years of experience with Javascript and React. I first started working with React in 2018, but then I took a break. In 2021, I turned to this field again. I have experience not only with React but also with React Native and Nextjs. I have experience with Redux and Context Api.',
   ),
@@ -196,34 +224,31 @@ Map<String, Language> languages = {
 };
 
 List<Certificate> certificates = [
-    Certificate(
+  Certificate(
       name: "Front-End Web Development with React - Coursera",
       date: DateTime(2022, 1, 1),
-      certificateUrl: "https://coursera.org/share/a1b8f3e26acf76846c83e9fbe3776824",
-      imageLink: "assets/images/react_certificate.png"
-    ),
-    Certificate(
+      certificateUrl:
+          "https://coursera.org/share/a1b8f3e26acf76846c83e9fbe3776824",
+      imageLink: "assets/images/react_certificate.png"),
+  Certificate(
       name: "Front-End Web UI Frameworks and Tools: Bootstrap 4 - Coursera",
       date: DateTime(2021, 12, 1),
-      certificateUrl: "https://www.coursera.org/account/accomplishments/verify/YTABBF3G98YU",
-      imageLink: "assets/images/bootstrap_certificate.png"
-    ),
+      certificateUrl:
+          "https://www.coursera.org/account/accomplishments/verify/YTABBF3G98YU",
+      imageLink: "assets/images/bootstrap_certificate.png"),
   Certificate(
-    name: "HackerRank CSS Certificate - HackerRank",
-    date: DateTime(2021, 12, 1),
-    certificateUrl: "https://www.hackerrank.com/certificates/7d6ca35ab0b8",
-    imageLink: "assets/images/css_certificate.png"
-  ),
+      name: "HackerRank CSS Certificate - HackerRank",
+      date: DateTime(2021, 12, 1),
+      certificateUrl: "https://www.hackerrank.com/certificates/7d6ca35ab0b8",
+      imageLink: "assets/images/css_certificate.png"),
   Certificate(
       name: "HackerRank JavaScript (Intermediate) Certificate - HackerRank",
       date: DateTime(2021, 12, 1),
       certificateUrl: "https://www.hackerrank.com/certificates/83186c0ba4ef",
-      imageLink: "assets/images/js_intermediate_certificate.png"
-  ),
+      imageLink: "assets/images/js_intermediate_certificate.png"),
   Certificate(
       name: "HackerRank JavaScript (Basic) Certificate - HackerRank",
       date: DateTime(2021, 12, 1),
       certificateUrl: "https://www.hackerrank.com/certificates/29d90349a417",
-      imageLink: "assets/images/js_basic_certificate.png"
-  ),
+      imageLink: "assets/images/js_basic_certificate.png"),
 ];
