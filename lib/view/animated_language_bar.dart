@@ -59,11 +59,9 @@ class _AnimatedLanguageBarState extends State<AnimatedLanguageBar>
           direction: widget.isMobile ? Axis.vertical : Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              child: Text(
-                widget.title,
-                style: const TextStyle(color: Colors.white70),
-              ),
+            Text(
+              widget.title,
+              style: const TextStyle(color: Colors.white70),
             ),
             Stack(
               children: [

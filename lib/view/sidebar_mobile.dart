@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/certificates_page.dart';
 import 'package:portfolio/pages/experiences_page.dart';
 import 'package:portfolio/pages/language_page.dart';
 import 'package:portfolio/pages/mobile_page.dart';
@@ -64,7 +65,8 @@ class _SideBarMobileState extends State<SideBarMobile> {
                     MaterialPageRoute(
                         builder: (context) => const ExperiencesPage()),
                   )
-                }),
+                },
+        ),
         SidebarXItem(
             iconWidget: const Icon(
               Icons.document_scanner,
@@ -77,7 +79,8 @@ class _SideBarMobileState extends State<SideBarMobile> {
                     MaterialPageRoute(
                         builder: (context) => const ProjectsPage()),
                   )
-                }),
+                },
+        ),
         SidebarXItem(
             iconWidget: const Icon(
               Icons.sort,
@@ -90,7 +93,22 @@ class _SideBarMobileState extends State<SideBarMobile> {
                     MaterialPageRoute(
                         builder: (context) => const LanguagePage()),
                   )
-                }),
+                },
+        ),
+        SidebarXItem(
+            iconWidget: const Icon(
+              Icons.description,
+              color: Color(0xFFB71C1C),
+            ),
+            label: 'Certificates',
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CertificatesPage()),
+              )
+            },
+        ),
       ],
       headerBuilder: (context, expanded) {
         return SizedBox(

@@ -19,19 +19,19 @@ class _LanguageBarsState extends State<LanguageBarsSmall> {
       constraints: BoxConstraints(
         minHeight: 100.h,
       ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: LanguagesTitle(isMobile: true),
-          ),
-          Container(
-            width: 100.w,
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Align(
-              alignment: Alignment.center,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: LanguagesTitle(isMobile: true),
+            ),
+            Container(
+              width: 100.w,
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: ListView.separated(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: languages.length,
                 separatorBuilder: (context, index) {
                   return const Divider();
@@ -50,8 +50,8 @@ class _LanguageBarsState extends State<LanguageBarsSmall> {
                 },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
