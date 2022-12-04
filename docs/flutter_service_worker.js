@@ -3,12 +3,14 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "cfd6639485f07c89deb86d366b4dc0d4",
+  "assets/AssetManifest.json": "5c0a175d8099b8ad033ca8d76115a8a7",
 "assets/assets/images/5eturkish.png": "ab8ee82cf49057a243112eb19d2d4738",
 "assets/assets/images/animlist.png": "5f1e23af929d4df7e36f4cb92c9e3554",
 "assets/assets/images/aselsan.png": "3a263b887db6e04df6e8afd8e9449031",
 "assets/assets/images/bootstrap_certificate.png": "7da902e9582a33e35ec3e553d23291af",
 "assets/assets/images/css_certificate.png": "0b98c59bb3ceaa571d11972a4d7d79f1",
+"assets/assets/images/detsis.png": "5ed5638e287bf7c0dc0efe2d4b431449",
+"assets/assets/images/fcs.png": "79f9bc0b7dd28b6cde7ae6c198de2bc9",
 "assets/assets/images/galery_app.png": "1abed3687052129fc0dead2d3cbb11f4",
 "assets/assets/images/gamemate.png": "80057cd38c38510659c4cd5271a88bb4",
 "assets/assets/images/github.png": "ec3a60c8c6539a07eb70b52f6737ea6e",
@@ -16,6 +18,7 @@ const RESOURCES = {
 "assets/assets/images/iot_flutter.png": "0cd538c68612742fdf0c40dba7585b46",
 "assets/assets/images/js_basic_certificate.png": "b87eb462b0fee5513c2ec7f9f7fc6978",
 "assets/assets/images/js_intermediate_certificate.png": "92b5d7eb537160bd6718a9b666ad3d08",
+"assets/assets/images/kards.png": "3505469efd1c72dd8e8aa672b415628c",
 "assets/assets/images/kotlin_startup.png": "93f5dda88a78d586959080c487a58c29",
 "assets/assets/images/linkedin.png": "30c453b7f5fbdb09ea0cb42a5dc7a6e5",
 "assets/assets/images/media_player.png": "6b415a88ca9a5bf3255ab80c58d4b57b",
@@ -32,17 +35,22 @@ const RESOURCES = {
 "assets/assets/images/web-image.png": "ecfdf3db71b3c8b154c2ade1dca8dbd9",
 "assets/assets/images/youtube.png": "acbb010f0893f71eac03f4d9334a9cbf",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
-"assets/NOTICES": "2cad49060847fd2ae1d65feedcab2e52",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/NOTICES": "a71100b897c63e75612c131d1f18098d",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
+"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
+"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
+"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"flutter.js": "eb2682e33f25cd8f1fc59011497c35f8",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "8e471f160b762a06809818a3236d8f0c",
-"/": "8e471f160b762a06809818a3236d8f0c",
-"main.dart.js": "d4de7e88186c79d0e6b766c8381c5743",
+"index.html": "8c298c075db14cf0d4efae00ffec1147",
+"/": "8c298c075db14cf0d4efae00ffec1147",
+"main.dart.js": "255bb6fa30d664b3784f3056c9421167",
 "manifest.json": "e74af8957b5899dc6da961caee768ec9",
 "version.json": "009c9e65172e010890f7f65fde438006"
 };
@@ -50,8 +58,7 @@ const RESOURCES = {
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
 "assets/NOTICES",
 "assets/AssetManifest.json",
